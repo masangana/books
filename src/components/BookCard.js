@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 function BookCard({ book }) {
   return (
     <section className="bookCardWrapper">

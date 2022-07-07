@@ -2,11 +2,11 @@ import React from 'react';
 
 function AddBook() {
   const handleInputTitle = (e) => {
-    
+
   };
 
   const handleInputAuthor = (e) => {
-    
+
   };
 
   const handleAddBook = () => {
