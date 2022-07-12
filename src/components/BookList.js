@@ -8,7 +8,6 @@ function BookList(props) {
   } = props;
   return (
     <div className="bookListContainer">
-      <p>Book list</p>
       {books.map((book) => <BookCard key={book.id} book={book} />)}
     </div>
   );

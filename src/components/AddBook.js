@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/addBook.css';
 
 function AddBook() {
   const handleInputTitle = (e) => {
@@ -15,7 +16,7 @@ function AddBook() {
   return (
     <section>
       <div />
-      <span >ADD A BOOK</span>
+      <span className='addNewBook' >ADD A BOOK</span>
       <form >
         <input
           type="text"
@@ -25,10 +26,11 @@ function AddBook() {
         />
         <input
           type="text"
+          className='inputBookAuthor'
           placeholder="Book Author"
           onChange={handleInputAuthor}
         />
-        <button type="button" onClick={handleAddBook}>ADD BOOK</button>
+        <button type="button" className='addBook' onClick={handleAddBook}>ADD BOOK</button>
       </form>
     </section>
   );

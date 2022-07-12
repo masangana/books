@@ -18,7 +18,7 @@ function Home() {
       title: 'Dune',
       author: 'Frank Herbert',
       genre: 'Science Fiction',
-      completed: '45',
+      completed: '75',
     },
     {
       id: uuidv4(),
@@ -30,7 +30,6 @@ function Home() {
   ];
   return (
     <>
-      <Header />
       <BookList books={books} />
       <AddBook />
     </>

@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Progress } from 'antd';
+import '../styles/bookCard.css';
 
 function BookCard({ book }) {
   return (
@@ -20,9 +22,17 @@ function BookCard({ book }) {
       </div>
       <div className="progressContainer">
         <div className="progressCircle">
-          <div className="outer">
-            <div className="inner" />
-          </div>
+        <Progress
+            type="circle"
+            width={80}
+            format={() => ''}
+            strokeColor={{
+              '0%': '#307bbe',
+              '100%': '#379cf6',
+            }}
+            trailColor="#e8e8e8"
+            percent={book.completed}
+          />
         </div>
 
         <div className="progressPercent">
