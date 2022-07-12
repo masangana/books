@@ -1,4 +1,6 @@
+import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FaUser } from 'react-icons/fa';
 import '../styles/header.css';
 
 function Header() {
@@ -9,7 +11,7 @@ function Header() {
   return (
     <section className="headerWrapper">
       <div className="headerContainer">
-        <span className="bookstore-CMS">Bookstore CMS</span>
+        <span className="bookstoreLogo">Bookstore</span>
         <NavLink
           to="/"
           style={navLinkStyles}

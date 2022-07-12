@@ -30,7 +30,6 @@ function Home() {
   ];
   return (
     <>
-      <Header />
       <BookList books={books} />
       <AddBook />
     </>
