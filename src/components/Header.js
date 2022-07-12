@@ -1,19 +1,29 @@
 import { NavLink } from 'react-router-dom';
+import '../styles/header.css';
 
 function Header() {
+  const navLinkStyles = ({ isActive }) => ({
+    fontWeight: isActive ? 'bold' : 'normal',
+    textDecoration: isActive ? 'none' : 'none',
+  });
   return (
-    <section>
-      <div >
-        <span>Bookstore</span>
+    <section className="headerWrapper">
+      <div className="headerContainer">
+        <span className="bookstore-CMS">Bookstore CMS</span>
         <NavLink
-          to="/">
-          <span>BOOKS</span>
+          to="/"
+          style={navLinkStyles}
+        >
+          <span className="books">BOOKS</span>
         </NavLink>
         <NavLink
-          to="/categories">
-          <span >CATEGORIES</span>
+          to="categories"
+          style={navLinkStyles}
+        >
+          <span className="categories">CATEGORIES</span>
         </NavLink>
       </div>
+      <button type="submit" aria-label="User" className="oval"><FaUser /></button>
     </section>
   );
 }

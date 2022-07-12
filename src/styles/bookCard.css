@@ -7,7 +7,6 @@
     --color-bleu: #0e4bef;
   }
 
-
 .bookCardWrapper {
     display: grid;
     grid-template-areas: "book progress status";
