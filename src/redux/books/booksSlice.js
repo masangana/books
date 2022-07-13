@@ -1,41 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
 // Initial State
-const initialState = [
-    {
-      item_id: uuidv4(),
-      title: 'A Series of Unfortunate Events slice',
-      author: 'Egmont',
-      genre: 'Drame',
-      completed: 64,
-      currentLesson: 'Chapter 17',
-    },
-    {
-      item_id: uuidv4(),
-      title: 'Narnia',
-      author: 'Clive Staples Lewis slice',
-      genre: 'Science Fiction',
-      completed: 8,
-      currentLesson: 'Chapter 3: "A Lesson Learned"',
-    },
-    {
-      item_id: uuidv4(),
-      title: 'Dune slice',
-      author: 'Frank Herbert',
-      genre: 'Science Fiction',
-      completed: 0,
-      currentLesson: 'Preface',
-    },
-    {
-      item_id: uuidv4(),
-      title: 'His Dark Materials',
-      author: 'Philip Pullman',
-      genre: 'Science Fiction',
-      completed: 25,
-      currentLesson: 'Chapter 5: "London"',
-    },
-  ];
+const initialState = [];
+
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/8e3ypuip3PlALfwf3MEx/books';
+
+// Async Action Creators
+export const fetchBookApi = createAsyncThunk('fetchBookApi', async () => {
+  const response = await axios.get(url);
+  return response.data;
+});
 
 // Slice Reducer
 const booksSlice = createSlice({
@@ -43,7 +19,7 @@ const booksSlice = createSlice({
   initialState,
   reducers: {
     addBook: {
-      reducer: (state, action) => [...state, action.payload],
+      reducer: (state, action) => [action.payload],
       prepare: (value) => ({
         payload: {
           ...value,
@@ -53,7 +29,21 @@ const booksSlice = createSlice({
         },
       }),
     },
-    delBook: (state, action) => [...state.filter((el) => el.item_id !== action.payload)],
+    delBook: (state, action) => [
+      ...state.filter((el) => el.item_id !== action.payload),
+    ],
+  },
+  extraReducers: {
+    [fetchBookApi.fulfilled]: (state, action) => {
+      const books = Object.keys(action.payload)
+        .map((el) => ({
+          item_id: el,
+          completed: Math.floor(Math.random() * 100),
+          currentLesson: `Chapter ${Math.floor(Math.random() * 15)}`,
+          ...action.payload[el][0],
+        }));
+      return [books];
+    },
   },
 });
 
