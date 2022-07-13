@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 const initialState = [
     {
       item_id: uuidv4(),
-      title: 'A Series of Unfortunate Events',
+      title: 'A Series of Unfortunate Events slice',
       author: 'Egmont',
       genre: 'Drame',
       completed: 64,
@@ -14,14 +14,14 @@ const initialState = [
     {
       item_id: uuidv4(),
       title: 'Narnia',
-      author: 'Clive Staples Lewis',
+      author: 'Clive Staples Lewis slice',
       genre: 'Science Fiction',
       completed: 8,
       currentLesson: 'Chapter 3: "A Lesson Learned"',
     },
     {
       item_id: uuidv4(),
-      title: 'Dune',
+      title: 'Dune slice',
       author: 'Frank Herbert',
       genre: 'Science Fiction',
       completed: 0,
