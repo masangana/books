@@ -27,7 +27,15 @@ const initialState = [
     author: 'Frank Herbert',
     genre: 'Science Fiction',
     completed: 0,
-    currentLesson: 'Introduction',
+    currentLesson: 'Preface',
+  },
+  {
+    item_id: uuidv4(),
+    title: 'His Dark Materials',
+    author: 'Philip Pullman',
+    genre: 'Science Fiction',
+    completed: 25,
+    currentLesson: 'Chapter 5: "London"',
   },
 ];
 
