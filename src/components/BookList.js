@@ -27,7 +27,7 @@ BookList.propTypes = {
       item_id: PropTypes.string,
       title: PropTypes.string,
       author: PropTypes.string,
-      category: PropTypes.string,
+      genre: PropTypes.string,
       completed: PropTypes.number,
     }),
   ).isRequired,

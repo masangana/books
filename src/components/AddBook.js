@@ -27,7 +27,7 @@ function AddBook() {
     const bookObj = {
       title: bookTitle,
       author: bookAuthor,
-      category: bookCategory,
+      genre: bookCategory,
     };
     dispatch(addBook(bookObj));
     setBookTitle('');
