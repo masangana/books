@@ -3,7 +3,7 @@ import { Spin } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
 import '../styles/categories.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { checkingStatus } from '../redux/categories/categories';
+import { checkingStatus } from '../redux/categories/categoriesSlice';
 
 function Categories() {
   const status = useSelector((state) => state.categories);
@@ -25,7 +25,7 @@ function Categories() {
           Check status
         </button>
         <span className="statusMsg">
-          {status}
+        {status.message}
         </span>
       </div>
   );

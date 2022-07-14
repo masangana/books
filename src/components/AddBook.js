@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/books';
+import { addBookApi } from '../redux/books/booksSlice';
 import '../styles/addBook.css';
 
 function AddBook() {
@@ -27,9 +27,9 @@ function AddBook() {
     const bookObj = {
       title: bookTitle,
       author: bookAuthor,
-      genre: bookCategory,
+      category: bookCategory,
     };
-    dispatch(addBook(bookObj));
+    dispatch(addBookApi(bookObj));
     setBookTitle('');
     setBookAuthor('');
     setBookCategory('');

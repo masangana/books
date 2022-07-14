@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Progress } from 'antd';
 import { useDispatch } from 'react-redux';
-import { remBook } from '../redux/books/books';
+import { delBookApi } from '../redux/books/booksSlice';
 import '../styles/bookCard.css';
 
 function BookCard({ book }) {
@@ -17,7 +17,15 @@ function BookCard({ book }) {
           <span className="comments">Comments</span>
           {' '}
           |
-          <button type="button" className="remove" onClick={() => dispatch(remBook(book.item_id))}>Remove</button>
+          <button
+            type="button"
+            className="remove"
+            onClick={() => {
+              dispatch(delBookApi(book.item_id));
+            }}
+          >
+            Remove
+          </button>
           {' '}
           |
           <span className="edit">Edit</span>
