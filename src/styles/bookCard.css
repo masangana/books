@@ -68,7 +68,20 @@
   margin-top: 0.5rem;
 }
 
-.remove,
+.remove {
+  background-color: transparent;
+  border: none;
+  color: var(--color-bleu);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-stretch: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+
 .edit {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
