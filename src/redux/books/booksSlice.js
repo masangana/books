@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 // Initial State
 const initialState = [];
 
-const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/8e3ypuip3PlALfwf3MEx/books';
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/EVX1V5lJGFUcvAsYYvh7/books';
 
 // Async Action Creators
 export const fetchBookApi = createAsyncThunk('fetchBookApi', async () => {

@@ -16,3 +16,7 @@
 body {
   font-family: 'Inconsolata', monospace;
 }
+
+.mainBody {
+  padding: 0 100px 0 50px;
+}

@@ -10,7 +10,7 @@ function BookCard({ book }) {
   return (
     <section className="bookCardWrapper">
       <div className="bookCardContainer">
-        <span className="genre">{book.genre}</span>
+        <span className="genre">{book.category}</span>
         <span className="title">{book.title}</span>
         <span className="author">{book.author}</span>
         <div className="options">
